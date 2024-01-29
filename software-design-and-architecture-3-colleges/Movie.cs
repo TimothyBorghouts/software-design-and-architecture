@@ -11,14 +11,14 @@
             _movieScreening = new List<MovieScreening>();
         }
 
-        public void addScreening(MovieScreening screening)
+        public void AddScreening(MovieScreening screening)
         {
             _movieScreening.Add(screening);
         }
 
-        public string toString()
+        public string ToString()
         {
-            return _title;
+            return "Movie: " + _title;
         }
     }
 }

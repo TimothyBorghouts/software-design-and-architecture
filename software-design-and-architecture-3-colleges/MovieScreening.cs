@@ -13,14 +13,19 @@
             _pricePerSeat = pricePerSeat;
         }
 
-        public double getPricePerSeat()
+        public double GetPricePerSeat()
         {
             return _pricePerSeat;
         }
 
-        public string toString()
+        public DateTime GetDateTime()
         {
-            throw new NotImplementedException();
+            return _dateAndTime;
+        }
+
+        public string ToString()
+        {
+            return "MovieScreening: \n" + _movie.ToString() + "\nDateTime: " + _dateAndTime.ToString() + "PricePerSeat:" + _pricePerSeat.ToString();
         }
     }
 }
