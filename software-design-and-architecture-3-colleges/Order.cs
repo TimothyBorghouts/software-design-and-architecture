@@ -55,43 +55,90 @@ namespace software_design_and_architecture_3_colleges
                         }
                     }     
                 }
-                //•	Als de bestelling van een niet-student bestaat uit 6 kaartjes of meer bestaat, dan krijg je 10% groepskorting.
-                if (_movieTickets.Count >= 6 && !_isStudentOrder) {
-                    totalPrice *= 0.9;
-                }
+                CalculateGroupDiscount(totalPrice);
             }
             return totalPrice;
         }
 
+        //public double CalculateMidWeekDiscount(double costs)
+        //{
+        //    if ()
+        //    {
+        //        return costs;
+        //    }
+
+        //    return costs;
+        //}
+
+        //public double CalculateStudentDiscount(double costs)
+        //{
+        //    if ()
+        //    {
+        //        return costs;
+        //    }
+
+        //    return costs;
+        //}
+
+        //public double CalculatePremium(double costs)
+        //{
+        //    if()
+        //    {
+        //        return costs;
+        //    }
+        //    return costs;
+        //}
+
+
+        //•	Als de bestelling van een niet-student bestaat uit 6 kaartjes of meer bestaat, dan krijg je 10% groepskorting.
+        public double CalculateGroupDiscount(double costs)
+        {
+            if (_movieTickets.Count >= 6 && !_isStudentOrder)
+            {
+                return costs *= 0.9;
+            }
+            return costs;
+        }
+
         public void Export(TicketExportFormat exportFormat)
         {
-            string tickets = "";
-            List<MovieTicket> _data = new List<MovieTicket>();
-
-            string plainTextFile = "C:\\Software projecten\\software-design-and-architecture-3-colleges\\software-design-and-architecture-3-colleges\\plaintext.txt";
-            string jsonDataFile = "C:\\Software projecten\\software-design-and-architecture-3-colleges\\software-design-and-architecture-3-colleges\\json.json";
-
             if (exportFormat == TicketExportFormat.PLAINTEXT)
             {
-                foreach (MovieTicket movieTicket in _movieTickets)
-                {
-                    tickets += movieTicket.ToString();
-                    tickets += "\n\n";
-                }
-
-                File.WriteAllText(plainTextFile, tickets);
-                Console.WriteLine("Plaintext data exported successfully.");
+                ExportJson();
             }
             else if (exportFormat == TicketExportFormat.JSON)
             {
-                foreach(MovieTicket movieTicket in _movieTickets)
-                {
-                    _data.Add(movieTicket);
-                }
-                string json = JsonConvert.SerializeObject( _data.ToArray());
-                File.WriteAllText(jsonDataFile, json);
-                Console.WriteLine("Json data exported successfully.");
+                ExportPlaintText();
             }
+        }
+
+        public void ExportJson() 
+        {
+            string jsonDataFile = "C:\\Software projecten\\software-design-and-architecture-3-colleges\\software-design-and-architecture-3-colleges\\json.json";
+            List<MovieTicket> _data = new List<MovieTicket>();
+
+            foreach (MovieTicket movieTicket in _movieTickets)
+            {
+                _data.Add(movieTicket);
+            }
+            string json = JsonConvert.SerializeObject(_data.ToArray());
+            File.WriteAllText(jsonDataFile, json);
+            Console.WriteLine("Json data exported successfully.");
+        }
+
+        public void ExportPlaintText()
+        {
+            string plainTextFile = "C:\\Software projecten\\software-design-and-architecture-3-colleges\\software-design-and-architecture-3-colleges\\plaintext.txt";
+            string tickets = "";
+
+            foreach (MovieTicket movieTicket in _movieTickets)
+            {
+                tickets += movieTicket.ToString();
+                tickets += "\n\n";
+            }
+
+            File.WriteAllText(plainTextFile, tickets);
+            Console.WriteLine("Plaintext data exported successfully.");
         }
     }
 }
