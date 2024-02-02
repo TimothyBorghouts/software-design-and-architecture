@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System.Reflection.Metadata.Ecma335;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -29,75 +30,63 @@ namespace software_design_and_architecture_3_colleges
 
         public double CalculatePrice()
         {
-            double totalPrice = 0;
-            if(_movieTickets.Count > 0)
+            if(_movieTickets.Count <= 0)
             {
-                for (int i = 0; i < _movieTickets.Count; i++)
-                {
-                    if (_movieTickets.Count > 1)
-                    {
-                        //•	Elk 2e ticket is gratis voor iedereen (ma/di/wo/do) 
-                        //•	Elk 2e ticket is gratis voor studenten (elke dag van de week) 
-                        if (!((i % 2 != 0) && (_isStudentOrder || _movieTickets[0].IsMidWeek())))
-                        {
-                            totalPrice += _movieTickets[i].GetPrice();
-
-                            //•	Een premium ticket is voor studenten 2,- duurder dan de standaardprijs per stoel 
-                            if (_movieTickets[i].IsPremium() && _isStudentOrder)
-                            {
-                                totalPrice += 2;
-                            }
-                            //•	Een premium ticket is voor niet studenten 3,- duurder dan de standaardprijs per stoel 
-                            else if (_movieTickets[i].IsPremium())
-                            {
-                                totalPrice += 3;
-                            }
-                        }
-                    }     
-                }
-                CalculateGroupDiscount(totalPrice);
+                throw new InvalidOperationException("No movie tickets available. Cannot calculate total price.");
             }
-            return totalPrice;
+
+            double totalPrice = 0;
+
+            for (int i = 0; i < _movieTickets.Count; i++)
+            {
+                if ((i % 2 != 0))
+                {
+                    totalPrice += CalculateStudentAndMidWeekDiscount(_movieTickets[i]);
+                } else
+                {
+                    totalPrice += _movieTickets[i].GetPrice();
+                    totalPrice += CalculatePremium(_movieTickets[i]);
+                }
+            }
+            totalPrice -= CalculateGroupDiscount(totalPrice);
+            return totalPrice;            
         }
 
-        //public double CalculateMidWeekDiscount(double costs)
-        //{
-        //    if ()
-        //    {
-        //        return costs;
-        //    }
+        // Elk 2e ticket is gratis voor studenten
+        // Elk 2e ticket is gratis voor niet studenten op ma/di/wo/do.
+        public double CalculateStudentAndMidWeekDiscount(MovieTicket movieTicket)
+        {
+            if (_isStudentOrder || movieTicket.IsMidWeek())
+            {
+                return 0;
+            }
 
-        //    return costs;
-        //}
+            return movieTicket.GetPrice() ;
+        }
 
-        //public double CalculateStudentDiscount(double costs)
-        //{
-        //    if ()
-        //    {
-        //        return costs;
-        //    }
+        // Een premium ticket is voor studenten 2,- duurder en voor niet studenten 3,- duurder.
+        public double CalculatePremium(MovieTicket movieTicket)
+        {
+            if (movieTicket.IsPremium())
+            {
+                if (_isStudentOrder)
+                {
+                    return 2;
+                }
 
-        //    return costs;
-        //}
+                return 3;
+            }
+            return 0;
+        }
 
-        //public double CalculatePremium(double costs)
-        //{
-        //    if()
-        //    {
-        //        return costs;
-        //    }
-        //    return costs;
-        //}
-
-
-        //•	Als de bestelling van een niet-student bestaat uit 6 kaartjes of meer bestaat, dan krijg je 10% groepskorting.
+        // Als de bestelling van een niet-student bestaat uit 6 kaartjes of meer bestaat, dan krijg je 10% groepskorting.
         public double CalculateGroupDiscount(double costs)
         {
             if (_movieTickets.Count >= 6 && !_isStudentOrder)
             {
-                return costs *= 0.9;
+                return costs *= 0.1;
             }
-            return costs;
+            return 0;
         }
 
         public void Export(TicketExportFormat exportFormat)

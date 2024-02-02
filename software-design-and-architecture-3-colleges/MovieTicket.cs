@@ -36,16 +36,6 @@ namespace software_design_and_architecture_3_colleges
             return _movieScreening.GetPricePerSeat();
         }
 
-        public string ToString()
-        {
-            string ticket = "Ticket:\nRow: " + _rowNr + "\nSeat Number: " + _seatNr;
-            if(_isPremium )
-            {
-                ticket += "\nPremium ticket";
-            }
-            return ticket;
-        }
-
         public bool IsMidWeek()
         {
             DayOfWeek wk = _movieScreening.GetDateTime().DayOfWeek;
@@ -57,6 +47,16 @@ namespace software_design_and_architecture_3_colleges
             {
                 return false;
             }
+        }
+
+        public override string ToString()
+        {
+            string ticket = "Ticket:\nRow: " + _rowNr + "\nSeat Number: " + _seatNr;
+            if (_isPremium)
+            {
+                ticket += "\nPremium ticket";
+            }
+            return ticket;
         }
     }
 }
