@@ -61,9 +61,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\dev\\SOFA3\\software-design-and-architecture\\software-design-and-architecture-3-colleges\\software-design-and-architecture-3-colleges.csproj",
-      "projectName": "software-design-and-architecture-3-colleges",
-      "projectPath": "C:\\dev\\SOFA3\\software-design-and-architecture\\software-design-and-architecture-3-colleges\\software-design-and-architecture-3-colleges.csproj",
+      "projectUniqueName": "C:\\dev\\SOFA3\\software-design-and-architecture\\software-design-and-architecture-3-colleges\\software-design-and-architecture.csproj",
+      "projectName": "software-design-and-architecture",
+      "projectPath": "C:\\dev\\SOFA3\\software-design-and-architecture\\software-design-and-architecture-3-colleges\\software-design-and-architecture.csproj",
       "packagesPath": "C:\\Users\\matth\\.nuget\\packages\\",
       "outputPath": "C:\\dev\\SOFA3\\software-design-and-architecture\\software-design-and-architecture-3-colleges\\obj\\",
       "projectStyle": "PackageReference",

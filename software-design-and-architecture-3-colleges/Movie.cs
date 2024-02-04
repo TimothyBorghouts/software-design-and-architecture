@@ -16,7 +16,7 @@
             _movieScreening.Add(screening);
         }
 
-        public string ToString()
+        public override string ToString()
         {
             return "Movie: " + _title;
         }

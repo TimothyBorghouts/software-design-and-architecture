@@ -23,9 +23,9 @@
             return _dateAndTime;
         }
 
-        public string ToString()
+        public override string ToString()
         {
-            return "MovieScreening: \n" + _movie.ToString() + "\nDateTime: " + _dateAndTime.ToString() + "PricePerSeat:" + _pricePerSeat.ToString();
+            return "MovieScreening: \n" + _movie.ToString() + "\nDateTime: " + _dateAndTime.ToString() + "\nPricePerSeat: " + _pricePerSeat.ToString();
         }
     }
 }
