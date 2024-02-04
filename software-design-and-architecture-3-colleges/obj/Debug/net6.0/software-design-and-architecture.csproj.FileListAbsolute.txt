@@ -15,3 +15,20 @@ C:\Software projecten\software-design-and-architecture-3-colleges\software-desig
 C:\Software projecten\software-design-and-architecture-3-colleges\software-design-and-architecture-3-colleges\obj\Debug\net6.0\software-design-and-architecture.pdb
 C:\Software projecten\software-design-and-architecture-3-colleges\software-design-and-architecture-3-colleges\obj\Debug\net6.0\software-design-and-architecture.genruntimeconfig.cache
 C:\Software projecten\software-design-and-architecture-3-colleges\software-design-and-architecture-3-colleges\obj\Debug\net6.0\ref\software-design-and-architecture.dll
+C:\dev\SOFA3\software-design-and-architecture\software-design-and-architecture-3-colleges\bin\Debug\net6.0\software-design-and-architecture.exe
+C:\dev\SOFA3\software-design-and-architecture\software-design-and-architecture-3-colleges\bin\Debug\net6.0\software-design-and-architecture.deps.json
+C:\dev\SOFA3\software-design-and-architecture\software-design-and-architecture-3-colleges\bin\Debug\net6.0\software-design-and-architecture.runtimeconfig.json
+C:\dev\SOFA3\software-design-and-architecture\software-design-and-architecture-3-colleges\bin\Debug\net6.0\software-design-and-architecture.dll
+C:\dev\SOFA3\software-design-and-architecture\software-design-and-architecture-3-colleges\bin\Debug\net6.0\software-design-and-architecture.pdb
+C:\dev\SOFA3\software-design-and-architecture\software-design-and-architecture-3-colleges\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\dev\SOFA3\software-design-and-architecture\software-design-and-architecture-3-colleges\obj\Debug\net6.0\software-design-and-architecture.csproj.AssemblyReference.cache
+C:\dev\SOFA3\software-design-and-architecture\software-design-and-architecture-3-colleges\obj\Debug\net6.0\software-design-and-architecture.GeneratedMSBuildEditorConfig.editorconfig
+C:\dev\SOFA3\software-design-and-architecture\software-design-and-architecture-3-colleges\obj\Debug\net6.0\software-design-and-architecture.AssemblyInfoInputs.cache
+C:\dev\SOFA3\software-design-and-architecture\software-design-and-architecture-3-colleges\obj\Debug\net6.0\software-design-and-architecture.AssemblyInfo.cs
+C:\dev\SOFA3\software-design-and-architecture\software-design-and-architecture-3-colleges\obj\Debug\net6.0\software-design-and-architecture.csproj.CoreCompileInputs.cache
+C:\dev\SOFA3\software-design-and-architecture\software-design-and-architecture-3-colleges\obj\Debug\net6.0\software-design-and-architecture.csproj.CopyComplete
+C:\dev\SOFA3\software-design-and-architecture\software-design-and-architecture-3-colleges\obj\Debug\net6.0\software-design-and-architecture.dll
+C:\dev\SOFA3\software-design-and-architecture\software-design-and-architecture-3-colleges\obj\Debug\net6.0\refint\software-design-and-architecture.dll
+C:\dev\SOFA3\software-design-and-architecture\software-design-and-architecture-3-colleges\obj\Debug\net6.0\software-design-and-architecture.pdb
+C:\dev\SOFA3\software-design-and-architecture\software-design-and-architecture-3-colleges\obj\Debug\net6.0\software-design-and-architecture.genruntimeconfig.cache
+C:\dev\SOFA3\software-design-and-architecture\software-design-and-architecture-3-colleges\obj\Debug\net6.0\ref\software-design-and-architecture.dll
