@@ -60,9 +60,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Software projecten\\software-design-and-architecture-3-colleges\\software-design-and-architecture-3-colleges\\software-design-and-architecture-3-colleges.csproj",
-      "projectName": "software-design-and-architecture-3-colleges",
-      "projectPath": "C:\\Software projecten\\software-design-and-architecture-3-colleges\\software-design-and-architecture-3-colleges\\software-design-and-architecture-3-colleges.csproj",
+      "projectUniqueName": "C:\\Software projecten\\software-design-and-architecture-3-colleges\\software-design-and-architecture-3-colleges\\software-design-and-architecture.csproj",
+      "projectName": "software-design-and-architecture",
+      "projectPath": "C:\\Software projecten\\software-design-and-architecture-3-colleges\\software-design-and-architecture-3-colleges\\software-design-and-architecture.csproj",
       "packagesPath": "C:\\Users\\timot\\.nuget\\packages\\",
       "outputPath": "C:\\Software projecten\\software-design-and-architecture-3-colleges\\software-design-and-architecture-3-colleges\\obj\\",
       "projectStyle": "PackageReference",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "L25GpO82lV1LK7FQ/E4IUvkOd6j2dL+k6/fIhnCtr91I9tp7fKoJtyT7na4dYbre7p2WcZ7R0MyOF7OaikOfLQ==",
+  "dgSpecHash": "r55+P3MytHjSfUG83GZMxpBVf9RNfvLijhmGR3dKCajYy1Sf1Bw/TV9Ha3upITwxSDYe9tperpQqe24TQGAdbA==",
   "success": true,
-  "projectFilePath": "C:\\Software projecten\\software-design-and-architecture-3-colleges\\software-design-and-architecture-3-colleges\\software-design-and-architecture-3-colleges.csproj",
+  "projectFilePath": "C:\\Software projecten\\software-design-and-architecture-3-colleges\\software-design-and-architecture-3-colleges\\software-design-and-architecture.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\timot\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
   ],
