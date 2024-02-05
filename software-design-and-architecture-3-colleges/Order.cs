@@ -61,7 +61,9 @@ namespace software_design_and_architecture_3_colleges
                 return 0;
             }
 
-            return movieTicket.GetPrice() ;
+            double totalprice = movieTicket.GetPrice();
+            totalprice += CalculatePremium(movieTicket);
+            return totalprice;
         }
 
         // Een premium ticket is voor studenten 2,- duurder en voor niet studenten 3,- duurder.
