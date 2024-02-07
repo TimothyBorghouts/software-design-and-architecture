@@ -11,6 +11,12 @@
 npm-debug.log
 yarn-error.log
 
+# Visual Studio files
+.vs/
+*.suo
+*.cache
+*.bin
+
 # IDEs and editors
 .idea/
 .project
