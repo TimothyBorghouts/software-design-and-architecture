@@ -1,6 +1,6 @@
 ﻿namespace software_design_and_architecture_3_colleges
 {
-    public class Movie
+    public abstract class Movie
     {
         private string _title;
         private List<MovieScreening> _movieScreening;

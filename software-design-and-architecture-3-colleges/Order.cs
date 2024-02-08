@@ -8,13 +8,12 @@ namespace software_design_and_architecture_3_colleges
     public class Order
     {
         private int _orderNr;
-        private bool _isStudentOrder;
         private List<MovieTicket> _movieTickets;
+        private IExport export;
 
-        public Order(int orderNr, bool isStrudentOrder)
+        public Order(int orderNr)
         {
             _orderNr = orderNr;
-            _isStudentOrder = isStrudentOrder;
             _movieTickets = new List<MovieTicket>();
         }
 
@@ -93,43 +92,16 @@ namespace software_design_and_architecture_3_colleges
 
         public void Export(TicketExportFormat exportFormat)
         {
-            if (exportFormat == TicketExportFormat.PLAINTEXT)
+            if (exportFormat == TicketExportFormat.JSON)
             {
-                ExportJson();
+                export = new ExportJson();
+                export.Export(_movieTickets);
             }
-            else if (exportFormat == TicketExportFormat.JSON)
+            else if (exportFormat == TicketExportFormat.PLAINTEXT)
             {
-                ExportPlaintText();
+                export = new ExportText();
+                export.Export(_movieTickets);
             }
-        }
-
-        public void ExportJson() 
-        {
-            string jsonDataFile = "C:\\Software projecten\\software-design-and-architecture-3-colleges\\software-design-and-architecture-3-colleges\\json.json";
-            List<MovieTicket> _data = new List<MovieTicket>();
-
-            foreach (MovieTicket movieTicket in _movieTickets)
-            {
-                _data.Add(movieTicket);
-            }
-            string json = JsonConvert.SerializeObject(_data.ToArray());
-            File.WriteAllText(jsonDataFile, json);
-            Console.WriteLine("Json data exported successfully.");
-        }
-
-        public void ExportPlaintText()
-        {
-            string plainTextFile = "C:\\Software projecten\\software-design-and-architecture-3-colleges\\software-design-and-architecture-3-colleges\\plaintext.txt";
-            string tickets = "";
-
-            foreach (MovieTicket movieTicket in _movieTickets)
-            {
-                tickets += movieTicket.ToString();
-                tickets += "\n\n";
-            }
-
-            File.WriteAllText(plainTextFile, tickets);
-            Console.WriteLine("Plaintext data exported successfully.");
         }
     }
 }
