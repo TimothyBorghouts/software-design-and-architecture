@@ -5,11 +5,12 @@ using software_design_and_architecture_3_colleges;
 Movie movie = new Movie("Matthijs de dinosaurus");
 MovieScreening movieScreening = new MovieScreening(movie, DateTime.Now.AddDays(4), 10);
 
-Console.WriteLine(movie.ToString() + "\n");
+//Console.WriteLine(movie.ToString() + "\n");
 Console.WriteLine(movieScreening.ToString() + "\n");
 
-Order order1 = new Order(1, true);
-Order order2 = new Order(2, false);
+Order order1 = new StudentOrder(1);
+Order order2 = new NormalOrder(2);
+//StudentOrder studentOrder = new StudentOrder(1);
 
 // Order 1
 
@@ -23,7 +24,7 @@ order1.AddSeatReservation(movieTicket1);
 order1.AddSeatReservation(movieTicket2);
 order1.AddSeatReservation(movieTicket3);
 
-Console.WriteLine("Price order 1: " + order1.CalculatePrice());
+Console.WriteLine("Price order 1: " + order1.CalculateAndCheckPrice());
 
 
 // Order 2
@@ -48,7 +49,7 @@ order2.AddSeatReservation(movieTicket9);
 order2.AddSeatReservation(movieTicket10);
 order2.AddSeatReservation(movieTicket11);
 
-Console.WriteLine("Price order 2: " + order2.CalculatePrice());
+Console.WriteLine("Price order 2: " + order2.CalculateAndCheckPrice());
 
 // Export
 

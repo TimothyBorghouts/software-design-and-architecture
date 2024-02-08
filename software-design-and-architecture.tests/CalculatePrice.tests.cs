@@ -6,7 +6,16 @@ namespace software_design_and_architecture.tests
     {
         private Order CreateOrderWithMovieTickets(bool isStudent, DateTime screeningDateTime, bool isPremium)
         {
-            Order order = new Order(1, isStudent);
+            Order order;
+            if (isStudent)
+            {
+                order = new StudentOrder(1);
+            }
+            else
+            {
+                order = new NormalOrder(1);
+            }
+            
             Movie movie = new Movie("Timothy de draak");
             MovieScreening movieScreening = new MovieScreening(movie, screeningDateTime, 10);
             MovieTicket movieTicket1 = new MovieTicket(2, 5, isPremium, movieScreening);
@@ -21,10 +30,10 @@ namespace software_design_and_architecture.tests
         public void NoMovieTicketsInOrder()
         {
             //Arrange
-            Order order = new Order(1, true);
+            Order order = new NormalOrder(1);
 
             //Act
-            var exception = Assert.Throws<InvalidOperationException>(() => order.CalculatePrice());
+            var exception = Assert.Throws<InvalidOperationException>(() => order.CalculateAndCheckPrice());
 
             //Assert
             Assert.Equal("No movie tickets available. Cannot calculate total price.", exception.Message);
@@ -38,7 +47,7 @@ namespace software_design_and_architecture.tests
             Order order = CreateOrderWithMovieTickets(true, DateTime.Now, false);
 
             //Act
-            var result = order.CalculatePrice();
+            var result = order.CalculateAndCheckPrice();
 
             // Assert
             Assert.Equal(10, result);
@@ -52,7 +61,7 @@ namespace software_design_and_architecture.tests
             Order order = CreateOrderWithMovieTickets(false, new DateTime(2024, 2, 5), false);
 
             //Act
-            var result = order.CalculatePrice();
+            var result = order.CalculateAndCheckPrice();
 
             // Assert
             Assert.Equal(10, result);
@@ -65,7 +74,7 @@ namespace software_design_and_architecture.tests
             //Arrange
             Order order = CreateOrderWithMovieTickets(false, new DateTime(2024, 2, 6), false);
             //Act
-            var result = order.CalculatePrice();
+            var result = order.CalculateAndCheckPrice();
             // Assert
             Assert.Equal(10, result);
         }
@@ -77,7 +86,7 @@ namespace software_design_and_architecture.tests
             //Arrange
             Order order = CreateOrderWithMovieTickets(false, new DateTime(2024, 2, 7), false);
             //Act
-            var result = order.CalculatePrice();
+            var result = order.CalculateAndCheckPrice();
             // Assert
             Assert.Equal(10, result);
         }
@@ -89,7 +98,7 @@ namespace software_design_and_architecture.tests
             //Arrange
             Order order = CreateOrderWithMovieTickets(false, new DateTime(2024, 2, 8), false);
             //Act
-            var result = order.CalculatePrice();
+            var result = order.CalculateAndCheckPrice();
             // Assert
             Assert.Equal(10, result);
         }
@@ -102,7 +111,7 @@ namespace software_design_and_architecture.tests
             Order order = CreateOrderWithMovieTickets(false, new DateTime(2024, 2, 4), false);
 
             //Act
-            var result = order.CalculatePrice();
+            var result = order.CalculateAndCheckPrice();
 
             // Assert
             Assert.Equal(20, result);
@@ -124,7 +133,7 @@ namespace software_design_and_architecture.tests
             order.AddSeatReservation(new MovieTicket(2, 5, false, movieScreening));
 
             //Act
-            var result = order.CalculatePrice();
+            var result = order.CalculateAndCheckPrice();
 
             // Assert
             Assert.Equal(54, result);
@@ -146,7 +155,7 @@ namespace software_design_and_architecture.tests
             order.AddSeatReservation(new MovieTicket(2, 5, false, movieScreening));
 
             //Act
-            var result = order.CalculatePrice();
+            var result = order.CalculateAndCheckPrice();
 
             // Assert
             Assert.Equal(27, result);
@@ -166,7 +175,7 @@ namespace software_design_and_architecture.tests
             order.AddSeatReservation(new MovieTicket(2, 5, false, movieScreening));
             order.AddSeatReservation(new MovieTicket(2, 5, false, movieScreening));
             //Act
-            var result = order.CalculatePrice();
+            var result = order.CalculateAndCheckPrice();
             // Assert
             Assert.Equal(50, result);
         }
@@ -179,7 +188,7 @@ namespace software_design_and_architecture.tests
             Order order = CreateOrderWithMovieTickets(false, new DateTime(2024, 2, 4), true);
 
             //Act
-            var result = order.CalculatePrice();
+            var result = order.CalculateAndCheckPrice();
 
             // Assert
             Assert.Equal(26, result);
@@ -192,7 +201,7 @@ namespace software_design_and_architecture.tests
             //Arrange
             Order order = CreateOrderWithMovieTickets(false, new DateTime(2024, 2, 5), true);
             //Act
-            var result = order.CalculatePrice();
+            var result = order.CalculateAndCheckPrice();
             // Assert
             Assert.Equal(13, result);
         }
@@ -204,7 +213,7 @@ namespace software_design_and_architecture.tests
             //Arrange
             Order order = CreateOrderWithMovieTickets(true, new DateTime(2024, 2, 5), true);
             //Act
-            var result = order.CalculatePrice();
+            var result = order.CalculateAndCheckPrice();
             // Assert
             Assert.Equal(12, result);
         }

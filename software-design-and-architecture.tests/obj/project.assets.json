@@ -5539,32 +5539,39 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\timot\\.nuget\\packages\\": {}
+    "C:\\Users\\matth\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Software projecten\\software-design-and-architecture-3-colleges\\software-design-and-architecture.tests\\software-design-and-architecture.tests.csproj",
+      "projectUniqueName": "C:\\Users\\matth\\Source\\Repos\\software-design-and-architecture\\software-design-and-architecture.tests\\software-design-and-architecture.tests.csproj",
       "projectName": "software-design-and-architecture.tests",
-      "projectPath": "C:\\Software projecten\\software-design-and-architecture-3-colleges\\software-design-and-architecture.tests\\software-design-and-architecture.tests.csproj",
-      "packagesPath": "C:\\Users\\timot\\.nuget\\packages\\",
-      "outputPath": "C:\\Software projecten\\software-design-and-architecture-3-colleges\\software-design-and-architecture.tests\\obj\\",
+      "projectPath": "C:\\Users\\matth\\Source\\Repos\\software-design-and-architecture\\software-design-and-architecture.tests\\software-design-and-architecture.tests.csproj",
+      "packagesPath": "C:\\Users\\matth\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\matth\\Source\\Repos\\software-design-and-architecture\\software-design-and-architecture.tests\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\timot\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\matth\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Software projecten\\software-design-and-architecture-3-colleges\\software-design-and-architecture-3-colleges\\software-design-and-architecture.csproj": {
-              "projectPath": "C:\\Software projecten\\software-design-and-architecture-3-colleges\\software-design-and-architecture-3-colleges\\software-design-and-architecture.csproj"
+            "C:\\Users\\matth\\Source\\Repos\\software-design-and-architecture\\software-design-and-architecture-3-colleges\\software-design-and-architecture.csproj": {
+              "projectPath": "C:\\Users\\matth\\Source\\Repos\\software-design-and-architecture\\software-design-and-architecture-3-colleges\\software-design-and-architecture.csproj"
             }
           }
         }
@@ -5616,7 +5623,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

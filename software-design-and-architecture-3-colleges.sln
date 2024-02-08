@@ -5,7 +5,7 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "software-design-and-architecture", "software-design-and-architecture-3-colleges\software-design-and-architecture.csproj", "{EAAF31A2-D50A-4E0C-8825-AA6B047AA485}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "software-design-and-architecture.tests", "software-design-and-architecture.tests\software-design-and-architecture.tests.csproj", "{C39295A2-424F-4579-A728-4773AA134CA7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "software-design-and-architecture.tests", "software-design-and-architecture.tests\software-design-and-architecture.tests.csproj", "{C39295A2-424F-4579-A728-4773AA134CA7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
